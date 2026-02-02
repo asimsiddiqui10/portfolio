@@ -1,6 +1,13 @@
 // Work projects data
 const workProjects = [
     {
+        year: "2024",
+        title: "ACT",
+        description: "Software Engineer + Product Designer",
+        slug: "american-completion-tools",
+        image: "work/american-completion-tools/images/dashboard-admin.png"
+    },
+    {
         year: "2025",
         title: "SportTriad",
         description: "Founding AI Engineer.",
@@ -9,10 +16,17 @@ const workProjects = [
     },
     {
         year: "2024",
-        title: "American Completion Tools",
-        description: "Software Engineer + Product Designer",
-        slug: "american-completion-tools",
-        image: "work/american-completion-tools/images/dashboard-admin.png"
+        title: "Soccertact",
+        description: "Product design | UI/UX",
+        slug: "soccertact",
+        image: "work/soccertact/images/portfolio-1.png"
+    },
+    {
+        year: "2024",
+        title: "marketise.ai",
+        description: "Frontend Engineer + AI",
+        slug: "marketise",
+        image: "work/marketise/images/landing.png"
     },
     {
         year: "2024",
@@ -22,23 +36,9 @@ const workProjects = [
     },
     {
         year: "2024",
-        title: "Marketise.ai",
-        description: "Frontend Engineer + AI",
-        slug: "marketise",
-        image: "work/marketise/images/landing.png"
-    },
-    {
-        year: "2024",
         title: "Scheduling Website",
         description: "Advanced scheduling and appointment management system.",
         slug: "scheduling"
-    },
-    {
-        year: "2024",
-        title: "Soccertact",
-        description: "Product design | UI/UX",
-        slug: "soccertact",
-        image: "work/soccertact/images/portfolio-1.png"
     }
 ];
 
