@@ -31,7 +31,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 0;
-    padding: 70px 0 0 0;
+    padding: 70px 0 10px 0;
 }
 
 .hero-container {
@@ -52,7 +52,6 @@ body {
 }
 
 .hero-intro {
-    font-family: 'Instrument Serif', serif;
     color: #000;
 }
 
@@ -66,8 +65,7 @@ body {
 }
 
 .hero-tagline {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(0.9375rem, 1.8vw + 0.6rem, 1.25rem);
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: -0.01em;
@@ -78,16 +76,11 @@ body {
     margin-bottom: 0;
 }
 
-.hero-serif {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
+.hero-serif,
 .hero-serif-italic {
-    font-family: 'Instrument Serif', serif;
-    font-style: normal;
-    font-weight: 400;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
 }
 
 /* Right side - experience & contact */
@@ -109,7 +102,7 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: #000;
-    margin-bottom: 8px;
+    margin-bottom: 0;
     letter-spacing: 0;
 }
 
