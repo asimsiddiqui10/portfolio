@@ -1,11 +1,18 @@
-// Work projects data
+// Work projects data (first 5 = grid slots 1–5)
 const workProjects = [
     {
         year: "2024",
         title: "ACT",
         description: "Software Engineer + Product Designer",
         slug: "american-completion-tools",
-        image: "work/american-completion-tools/images/dashboard-admin.png"
+        image: "work/american-completion-tools/images/ACT.jpg"
+    },
+    {
+        year: "2024",
+        title: "Soccertact",
+        description: "Product design | UI/UX",
+        slug: "soccertact",
+        image: "work/soccertact/images/Soccertact.jpg"
     },
     {
         year: "2025",
@@ -13,13 +20,6 @@ const workProjects = [
         description: "Founding AI Engineer.",
         slug: "sporttriad",
         image: "work/sporttriad/images/dashboard-ss.png"
-    },
-    {
-        year: "2024",
-        title: "Soccertact",
-        description: "Product design | UI/UX",
-        slug: "soccertact",
-        image: "work/soccertact/images/portfolio-1.png"
     },
     {
         year: "2024",
@@ -87,53 +87,17 @@ function renderProjects(projects, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    projects.forEach(project => {
+    // Use only the first five projects for the hero-style grid
+    projects.slice(0, 5).forEach(project => {
         const projectItem = document.createElement('div');
         projectItem.className = 'project-item';
 
-        // Create project content (left side)
-        const projectContent = document.createElement('div');
-        projectContent.className = 'project-content';
-
-        // Year
-        if (project.year) {
-            const year = document.createElement('div');
-            year.className = 'project-year';
-            year.textContent = project.year;
-            projectContent.appendChild(year);
-        }
-
-        // Title - now uses onclick to open project
-        const title = document.createElement('a');
-        title.href = '#';
-        title.className = 'project-title';
-        title.textContent = project.title;
-        title.onclick = function(e) {
-            e.preventDefault();
+        // Entire card opens the project detail
+        projectItem.onclick = function () {
             openProject(project.slug);
         };
-        projectContent.appendChild(title);
 
-        // Description
-        if (project.description) {
-            const description = document.createElement('p');
-            description.className = 'project-description';
-            description.textContent = project.description;
-            projectContent.appendChild(description);
-        }
-
-        // View button - now uses onclick to open project
-        const button = document.createElement('a');
-        button.href = '#';
-        button.className = 'project-button';
-        button.textContent = 'View';
-        button.onclick = function(e) {
-            e.preventDefault();
-            openProject(project.slug);
-        };
-        projectContent.appendChild(button);
-
-        // Create visual placeholder (right side - dark UI or image)
+        // Visual area
         const visualPlaceholder = document.createElement('div');
         visualPlaceholder.className = 'project-visual';
         
@@ -147,81 +111,12 @@ function renderProjects(projects, containerId) {
         }
 
         // Append to project item
-        projectItem.appendChild(projectContent);
         projectItem.appendChild(visualPlaceholder);
         container.appendChild(projectItem);
     });
 }
 
-// Scroll effect for hero text - bidirectional animation
-function initHeroScrollEffect() {
-    const heroWords = document.querySelectorAll('.hero-word');
-    const header = document.querySelector('.header');
-    
-    if (!heroWords.length || !header) return;
-    
-    const viewportHeight = window.innerHeight;
-    const totalWords = heroWords.length;
-    
-    // Animation completes at 2x viewport height (200vh) while section is 3x (300vh)
-    const animationScrollRange = viewportHeight * 2;
-    
-    function updateWordOpacity() {
-        const scrollY = window.scrollY;
-        
-        // Normalize scroll progress (0 to 1) over 3x viewport height
-        const scrollProgress = Math.max(0, Math.min(1, scrollY / animationScrollRange));
-        
-        // Calculate how many words should be fully visible based on scroll progress
-        const wordsToShow = Math.floor(scrollProgress * totalWords);
-        
-        // Update word opacities - works both ways (scroll up and down)
-        heroWords.forEach((word, index) => {
-            if (index < wordsToShow) {
-                // Words before the current position: fully visible
-                word.style.opacity = '1';
-                word.classList.add('fade-in');
-            } else if (index === wordsToShow && scrollProgress > 0) {
-                // Current word: smooth transition from 35% to 100%
-                const partialProgress = (scrollProgress * totalWords) - wordsToShow;
-                const opacity = Math.max(0.35, 0.35 + (partialProgress * 0.65));
-                word.style.opacity = opacity.toString();
-                if (opacity >= 1) {
-                    word.classList.add('fade-in');
-                } else {
-                    word.classList.remove('fade-in');
-                }
-            } else {
-                // Words after: at 35% opacity
-                word.style.opacity = '0.35';
-                word.classList.remove('fade-in');
-            }
-        });
-    }
-    
-    // Initial state - all words at 35% opacity
-    heroWords.forEach(word => {
-        word.style.opacity = '0.35';
-    });
-    
-    // Handle scroll events - smooth bidirectional animation
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                updateWordOpacity();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-    
-    // Initial call
-    updateWordOpacity();
-}
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects(workProjects, 'work-projects');
-    initHeroScrollEffect();
 });
