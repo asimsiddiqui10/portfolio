@@ -1,4 +1,4 @@
-// Work projects data (first 5 = grid slots 1–5)
+// Work/experience projects data (first 6 = grid slots)
 const workProjects = [
     {
         year: "2024",
@@ -16,10 +16,17 @@ const workProjects = [
     },
     {
         year: "2025",
-        title: "SportTriad",
-        description: "Founding AI Engineer.",
+        title: "Triad",
+        description: "Founding AI Engineer — product.",
+        slug: "triad",
+        image: "work/triad/images/Triad.jpg"
+    },
+    {
+        year: "2025",
+        title: "Sporttriad",
+        description: "Co-founding team — company.",
         slug: "sporttriad",
-        image: "work/sporttriad/images/dashboard-ss.png"
+        image: "work/sporttriad/images/Sporttriad.jpg"
     },
     {
         year: "2024",
@@ -87,8 +94,8 @@ function renderProjects(projects, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Use only the first five projects for the hero-style grid
-    projects.slice(0, 5).forEach(project => {
+    // Use only the first four projects for the experiences grid (hide the bottom two)
+    projects.slice(0, 4).forEach(project => {
         const projectItem = document.createElement('div');
         projectItem.className = 'project-item';
 

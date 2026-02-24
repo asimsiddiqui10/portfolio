@@ -6,6 +6,7 @@
     <title>Asim Siddiqui</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,9 +17,10 @@
                 <!-- Left Side -->
                 <div class="hero-left">
                     <div class="hero-intro">
-                        <span class="hero-highlight">Hi, I'm Asim.</span>
-                        Interdisciplinary Software Engineer and Product Designer, based in United States.
-                        I enjoy pushing boundaries and exploring new ways to express myself through Design-first software.
+                        <h1 class="hero-name">Asim Siddiqui</h1>
+                        <p class="hero-tagline">Interdisciplinary Software Engineer based in <span class="hero-serif-italic">United States</span>.</p>
+                        <p class="hero-tagline">I build thoughtful, <span class="hero-serif">design-first</span> products.</p>
+                        <p class="hero-tagline">Currently focused on <span class="hero-serif">Applied AI</span> and ML research.</p>
                     </div>
                 </div>
                 
@@ -27,7 +29,7 @@
                     <div class="hero-section-block">
                         <h3 class="hero-section-title">Experience</h3>
                         <p class="hero-experience-item">Founding Engineer at <a href="#" class="company-link">SportTriad</a></p>
-                        <p class="hero-experience-item">Product Lead at <a href="#" class="company-link">American Completion Tools</a></p>
+                        <p class="hero-experience-item">SWE + Product Design at <a href="#" class="company-link">American Completion Tools</a></p>
                         <p class="hero-experience-item">AI Researcher at <a href="#" class="company-link">University of Kansas</a></p>
                         <p class="hero-experience-item">Software Engineer at <a href="#" class="company-link">Cybronical Tech</a></p>
                     </div>
@@ -45,7 +47,8 @@
             <main>
                 <section id="work" class="section work-section">
                     <div class="work-container">
-                        <h2 class="section-title">Work</h2>
+                        <h2 class="section-title">Portfolio</h2>
+                        <p class="section-subtitle">In progress — always evolving.</p>
                         <div class="projects-grid" id="work-projects">
                             <!-- Projects will be dynamically added here -->
                         </div>
@@ -54,7 +57,7 @@
             </main>
 
             <footer class="footer">
-                <p class="footer-text">© 2025 Asim Siddiqui</p>
+                <p class="footer-text">© 2026 Asim Siddiqui</p>
             </footer>
         </div>
     </div>
@@ -62,33 +65,58 @@
     <!-- Project Detail Views (hidden by default) -->
     <div id="project-detail-view" class="project-detail-view" style="display: none;">
         
-        <!-- SportTriad -->
+        <!-- Triad (product) -->
+        <div id="project-triad" class="project-detail-container" style="display: none;">
+            <a href="#" class="back-link" onclick="closeProject(); return false;">← Back</a>
+            
+            <div class="project-detail-header">
+                <div class="project-detail-year">2025</div>
+                <h1 class="project-detail-title">Triad</h1>
+                <p class="project-detail-description">Founding AI Engineer — product and platform.</p>
+            </div>
+
+            <div class="project-content">
+                <p class="project-paragraph">
+                    Triad is an early-stage platform focused on the mental and emotional development of young athletes.
+                    It helps players, parents, and coaches build healthier habits around confidence, reflection, and communication — not just performance.
+                </p>
+
+                <div class="project-image">
+                    <img src="work/triad/images/Triad.jpg" alt="Triad Product Overview" />
+                </div>
+
+                <p class="project-paragraph">
+                    Triad is designed around a privacy-first knowledge graph that models relationships between athletes, reflections, habits, and contextual signals over time, rather than relying on raw conversational history. Sensitive data is stored as structured, permissioned nodes with explicit ownership and visibility rules across athlete, parent, and coach roles. The knowledge graph enables longitudinal insight and personalization while minimizing data exposure, and AI systems operate only on scoped, derived representations rather than direct access to raw user content. This architecture emphasizes auditability, least-privilege access, and long-term trust, which are critical when building systems for youth users.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sporttriad (company) -->
         <div id="project-sporttriad" class="project-detail-container" style="display: none;">
             <a href="#" class="back-link" onclick="closeProject(); return false;">← Back</a>
             
             <div class="project-detail-header">
                 <div class="project-detail-year">2025</div>
-                <h1 class="project-detail-title">SportTriad</h1>
-                <p class="project-detail-description">Founding AI Engineer.</p>
+                <h1 class="project-detail-title">Sporttriad</h1>
+                <p class="project-detail-description">Co-founding team — product research, product design, and UX.</p>
             </div>
 
             <div class="project-content">
                 <p class="project-paragraph">
-                    SportTriad is an early-stage platform focused on the mental and emotional development of young athletes.
-                    It helps players, parents, and coaches build healthier habits around confidence, reflection, and communication - not just performance.
+                    Sporttriad is the company behind Triad. As part of the founding team, I led product research to understand how young athletes, parents, and coaches actually talk about stress, confidence, and performance. This meant running interviews and lightweight discovery sessions, mapping out the emotional journey around games and training, and turning those narratives into specific opportunities for the product to help.
+                </p>
+
+                <p class="project-paragraph">
+                    On the product design side, I owned the end-to-end UX for our first releases: onboarding, daily check-ins, insights, and coach dashboards. I worked from low-fidelity flows to detailed UI, creating a design system that balanced a calm, trustworthy aesthetic with clear affordances for logging feelings, reflecting on patterns, and taking action. Every interaction was designed to feel supportive rather than clinical, especially for younger athletes who might be opening up about difficult topics for the first time.
                 </p>
 
                 <div class="project-image">
-                    <img src="work/sporttriad/images/website-ss.png" alt="SportTriad Website" />
+                    <img src="work/sporttriad/images/Sporttriad.jpg" alt="Sporttriad Brand and Product Surfaces" />
                 </div>
 
                 <p class="project-paragraph">
-                    SportTriad is designed around a privacy-first knowledge graph that models relationships between athletes, reflections, habits, and contextual signals over time, rather than relying on raw conversational history. Sensitive data is stored as structured, permissioned nodes with explicit ownership and visibility rules across athlete, parent, and coach roles. The knowledge graph enables longitudinal insight and personalization while minimizing data exposure, and AI systems operate only on scoped, derived representations rather than direct access to raw user content. This architecture emphasizes auditability, least-privilege access, and long-term trust, which are critical when building systems for youth users.
+                    Beyond the UI, I helped define how Sporttriad ran experiments: what to ship first, how to measure whether a feature actually reduced friction or improved reflection habits, and how to keep the system technically simple while still supporting future AI-assisted experiences. Day to day, this looked like an ongoing loop between user research, product strategy, IA and interaction design, and hands-on implementation in collaboration with engineering.
                 </p>
-
-                <div class="project-image">
-                    <img src="work/sporttriad/images/dashboard-ss.png" alt="SportTriad Dashboard" />
-                </div>
             </div>
         </div>
 
